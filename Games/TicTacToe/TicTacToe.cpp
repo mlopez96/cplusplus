@@ -132,3 +132,17 @@ int main() {
     return 0;
 }
 
+
+/*
+Problems or areas to update the code.
+
+The board array is defined as a char type, but it is initialized with numeric values. This could cause issues when the values are later used in comparison operations or printed to the console.
+
+The placeMarker function does not check for valid input for the slot parameter. For example, if the slot parameter is 0 or negative, or if it is greater than 9, the function will still try to access an invalid index in the board array. This could lead to runtime errors or unexpected behavior.
+
+The winner function only checks for three consecutive markers in rows, columns, and diagonals, but it does not check for a tie (when all slots on the board are filled and no player has won). This could cause the game to continue indefinitely if no player wins.
+
+The swapPlayerAndMarker function does not update the value of the currentMarker variable if the currentPlayer is not 1 or 2. This could cause the value of currentMarker to be incorrect if the currentPlayer is set to any other value.
+
+The game function does not check for invalid input when the player selects their marker or makes a move. For example, if the player enters a string or a negative number, the function will try to use it as a valid marker or move, which could cause runtime errors or unexpected behavior.
+*/
