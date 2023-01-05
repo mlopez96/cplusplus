@@ -22,9 +22,18 @@ Gameboard::Gameboard()
             gameSpace[i][j] = '-';
         }
 }
+//Expanded upon this function if a position is already taken
 void Gameboard::setGameSpace(int row,int column,char value)
 {
+    if(gameSpace[row][column] != '-')
+    {
+    cout << "That position is already taken. Please try again." << endl;
+    }
+    else
+    {
     gameSpace[row][column] = value;
+    }
+
 }
 
 char Gameboard::getGameSpace(int row,int column)
