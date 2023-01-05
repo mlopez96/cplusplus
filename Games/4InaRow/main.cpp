@@ -1,3 +1,36 @@
+
+
+#include "main.hpp"
+int main()
+{
+Gameboard board;
+int row, column;
+char user;
+while(true)
+{
+cout << "Enter row, column, and character for next move (e.g. 0 1 x): ";
+cin >> row >> column >> user;
+board.setGameSpace(row, column, user);
+board.printInfo();
+if(board.fourInRow() == 1)
+{
+cout << "Player X wins!" << endl;
+break;
+}
+cout << "Enter row, column, and character for next move (e.g. 0 1 o): ";
+cin >> row >> column >> user;
+board.setGameSpace(row, column, user);
+board.printInfo();
+if(board.fourInRow() == 1)
+{
+cout << "Player O wins!" << endl;
+break;
+}
+}
+return 0;
+}
+
+/* 
 #include "main.hpp"
 
 
@@ -26,3 +59,4 @@ int main()
     game1.printInfo();
     return 0;
 }
+*/
